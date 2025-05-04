@@ -9,11 +9,11 @@ with open("safe.json", "r", encoding="utf8") as f:
     safe = json.load(f)
 
 #string型データをint型に変換する関数
-def parse_int(value):
-    try:
-        return int(value)
-    except ValueError:
-        return 0
+# def value):
+#     try:
+#         return int(value)
+#     except ValueError:
+#         return 0
 
 
 #クラスの定義-----
@@ -39,25 +39,25 @@ col_bill,col_roll,col_coin = st.columns(3)
 
 #入力欄の配置
 with col_bill:
-    input_man = parse_int(st.text_input("10000円の枚数"))
-    input_gosen = parse_int(st.text_input("5000円の枚数"))
-    input_sen = parse_int(st.text_input("1000円の枚数"))
+    input_man = st.number_input("10000円の枚数",step=1, format="%d")
+    input_gosen = st.number_input("5000円の枚数",step=1, format="%d")
+    input_sen = st.number_input("1000円の枚数",step=1, format="%d")
 
 with col_roll:
-    input_r_five_hundreds = parse_int(st.text_input("【棒金】500円の本数"))
-    input_r_hundreds = parse_int(st.text_input("【棒金】100円の本数"))
-    input_r_fifty = parse_int(st.text_input("【棒金】50円の本数"))
-    input_r_ten = parse_int(st.text_input("【棒金】10円の本数"))
-    input_r_five = parse_int(st.text_input("【棒金】5円の本数"))
-    input_r_one = parse_int(st.text_input("【棒金】1円の本数"))
+    input_r_five_hundreds = st.number_input("【棒金】500円の本数",step=1, format="%d")
+    input_r_hundreds = st.number_input("【棒金】100円の本数",step=1, format="%d")
+    input_r_fifty = st.number_input("【棒金】50円の本数",step=1, format="%d")
+    input_r_ten = st.number_input("【棒金】10円の本数",step=1, format="%d")
+    input_r_five = st.number_input("【棒金】5円の本数",step=1, format="%d")
+    input_r_one = st.number_input("【棒金】1円の本数",step=1, format="%d")
 
 with col_coin:
-    input_five_hundreds = parse_int(st.text_input("500円の枚数"))
-    input_hundreds = parse_int(st.text_input("100円の枚数"))
-    input_fifty = parse_int(st.text_input("50円の枚数"))
-    input_ten = parse_int(st.text_input("10円の枚数"))
-    input_five = parse_int(st.text_input("5円の枚数"))
-    input_one = parse_int(st.text_input("1円の枚数"))
+    input_five_hundreds = st.number_input("500円の枚数",step=1, format="%d")
+    input_hundreds = st.number_input("100円の枚数",step=1, format="%d")
+    input_fifty = st.number_input("50円の枚数",step=1, format="%d")
+    input_ten = st.number_input("10円の枚数",step=1, format="%d")
+    input_five = st.number_input("5円の枚数",step=1, format="%d")
+    input_one = st.number_input("1円の枚数",step=1, format="%d")
 
 
 #取得した枚数を使ってインスタンスを生成
